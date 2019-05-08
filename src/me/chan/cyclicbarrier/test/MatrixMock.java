@@ -6,12 +6,12 @@ public class MatrixMock {
 
 	private int[][] matrix;
 	
-	public MatrixMock(int size, int length, int key) {
-		matrix = new int[size][length];
+	public MatrixMock(int rows, int cols, int key) {
+		matrix = new int[rows][cols];
 		int counter = 0;
 		Random random = new Random();
-		for (int i=0; i<size; i++) {
-			for (int j=0; j<length; j++) {
+		for (int i=0; i<rows; i++) {
+			for (int j=0; j<cols; j++) {
 				matrix[i][j] = random.nextInt(10);
 				if (matrix[i][j] == key)
 					++counter;
@@ -19,5 +19,13 @@ public class MatrixMock {
 		}
 		System.out.printf("Mock: There are %d ocurrences of %d in generated data.\n", 
 							counter, key);
+	}
+	
+	public int[] getRow(int row) {
+		if (row >= 0 && row < matrix.length) {
+			return matrix[row];
+		}
+		
+		return null;
 	}
 }
