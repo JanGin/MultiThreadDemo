@@ -22,10 +22,11 @@ public class MatrixMock {
 	}
 	
 	public int[] getRow(int row) {
+		int[] res = null;
 		if (row >= 0 && row < matrix.length) {
-			return matrix[row];
+			res = matrix[row];
 		}
 		
-		return null;
+		return res;
 	}
 }
