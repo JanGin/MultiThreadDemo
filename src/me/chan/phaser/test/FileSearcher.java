@@ -89,9 +89,16 @@ public class FileSearcher implements Runnable {
 	
 	
 	private void showInfo() {
+		/*
 		for (String abspath : absoluteFiles) {
 			System.out.printf("%s: %s\n", Thread.currentThread().getName(), abspath);
 		}
+		*/
+		
+		//use lambda expression to instead
+		absoluteFiles.stream().forEach((abspath) -> {
+			System.out.printf("%s: %s\n", Thread.currentThread().getName(), abspath);
+		});
 		phaser.arriveAndAwaitAdvance();
 	}
 
