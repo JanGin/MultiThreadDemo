@@ -5,7 +5,7 @@ import java.util.concurrent.Phaser;
 public class AppMain {
 
 	public static void main(String[] args) {
-		String suffix = "log";
+		String suffix = ".log";
 		Phaser phaser = new Phaser(2);
 		FileSearcher apps = new FileSearcher("C:\\Program Files", suffix, phaser);
 		FileSearcher system = new FileSearcher("C:\\Windows", suffix, phaser);

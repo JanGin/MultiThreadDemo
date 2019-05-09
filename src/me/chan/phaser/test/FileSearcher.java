@@ -25,6 +25,8 @@ public class FileSearcher implements Runnable {
 	
 	@Override
 	public void run() {
+		/*call arriveAndAwaitAdvance() to guarantee no threads start to execute 
+		until all threads are started*/ 
 		phaser.arriveAndAwaitAdvance();
 		System.out.println(Thread.currentThread().getName() + " starting.");
 		File file = new File(dirPath);
@@ -77,6 +79,8 @@ public class FileSearcher implements Runnable {
 		if (absoluteFiles.isEmpty()) {
 			System.out.printf("%s: Phase %d: 0 result.\n",
 					Thread.currentThread().getName(), phaser.getPhase());
+			
+			//If the result is empty, there is no necessity for the thread to continue running.
 			phaser.arriveAndDeregister();
 		} else {
 			System.out.printf("%s: Phase %d get %d result.\n",
