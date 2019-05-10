@@ -1,4 +1,4 @@
-package me.chan.executors.callable;
+package me.chan.executors.callable.future;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;

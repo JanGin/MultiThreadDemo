@@ -1,4 +1,4 @@
-package me.chan.executors.callable;
+package me.chan.executors.callable.future;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -41,8 +41,8 @@ public class AppMain {
 		
 		
 		System.out.println("Main: final results:");
-		for (int i = 0; i < results.size(); i++) {
-			Future<Long> result = results.get(i);
+		int i=0;
+		for (Future<Long> result : results) {
 			Long res = null;
 			try {
 				res = result.get();
@@ -51,6 +51,7 @@ public class AppMain {
 			}
 			
 			System.out.printf("Main: Task %d: result is : %d\n", i, res);
+			++i;
 		}
 		
 		executor.shutdown();
