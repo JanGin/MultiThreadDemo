@@ -45,8 +45,6 @@ public class Server {
 			System.out.println("Server:=====>Task Count: " + threadPool.getTaskCount());
 			System.out.println("Server:=====>ThreadPool Active Count: " + threadPool.getActiveCount());
 			System.out.println("Server:=====>Completed Task Count: " + threadPool.getCompletedTaskCount());
-			
-			
 		}
 	}
 	
