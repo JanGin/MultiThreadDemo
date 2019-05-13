@@ -3,12 +3,12 @@ package me.chan.executors.callable.delay;
 import java.time.LocalDateTime;
 import java.util.concurrent.Callable;
 
-public class Task implements Callable<String> {
+public class CTask implements Callable<String> {
 
 	
 	private String name;
 	
-	public Task (String name) {
+	public CTask (String name) {
 		this.name = name;
 	}
 	
