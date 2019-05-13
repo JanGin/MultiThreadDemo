@@ -33,5 +33,8 @@ public class AppMain {
 		
 		System.out.println("Main: is canceled? : " + result.isCancelled());
 		System.out.println("Main: is done? :" + result.isDone());
+		
+		executor.shutdown();
+		System.out.println("Main: the executor has finished");
 	}
 }
